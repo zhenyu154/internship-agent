@@ -1,6 +1,7 @@
 global-exclude *
 # Explicit reviewed source-release allowlist. Never recursively include runtime/private inputs.
 include .gitignore
+include .gitattributes
 include LICENSE
 include .github/workflows/offline-tests.yml
 include .streamlit/config.toml

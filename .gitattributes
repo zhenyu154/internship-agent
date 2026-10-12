@@ -1,0 +1,11 @@
+# Exact byte-reviewed synthetic demo inputs; preserve hashes on Windows checkout.
+/config/search_preferences.example.yaml text eol=lf
+/demo/fixtures/jobs.json text eol=lf
+/demo/fixtures/offline_cli_manifest.json text eol=lf
+/demo/fixtures/evidence/profile.md text eol=lf
+/demo/fixtures/evidence/experience_bank.md text eol=lf
+/demo/fixtures/evidence/verification_report.md text eol=lf
+/demo/fixtures/evidence/ranking_features.json text eol=lf
+/demo/fixtures/resume_review/general_resume.txt text eol=lf
+/demo/fixtures/resume_review/observations.md text eol=lf
+/demo/fixtures/resume_review/claims.json text eol=lf

@@ -2,6 +2,7 @@
 
 from pathlib import Path
 import hashlib
+import json
 import re
 import tomllib
 import unittest
@@ -10,6 +11,24 @@ ROOT = Path(__file__).resolve().parents[1]
 
 
 class PackagingTests(unittest.TestCase):
+    def test_byte_reviewed_synthetic_inputs_have_exact_lf_checkout_rules(self):
+        # Match only the reviewed hash-bound inputs; no blanket normalization.
+        fixture_manifest = json.loads((ROOT / "demo/fixtures/offline_cli_manifest.json").read_bytes())
+        expected = set(fixture_manifest["files"]) | {"demo/fixtures/offline_cli_manifest.json"}
+        lines = (ROOT / ".gitattributes").read_text(encoding="utf-8").splitlines()
+        rules = [line.split() for line in lines if line and not line.startswith("#")]
+        self.assertEqual({rule[0].removeprefix("/") for rule in rules}, expected)
+        self.assertEqual(len(rules), len(expected))
+        for rule in rules:
+            self.assertEqual(len(rule), 3)
+            self.assertTrue(rule[0].startswith("/"))
+            self.assertNotIn("*", rule[0])
+            self.assertEqual(rule[1:], ["text", "eol=lf"])
+        for label, fingerprint in fixture_manifest["files"].items():
+            raw = (ROOT / label).read_bytes()
+            self.assertNotIn(b"\r", raw, label)
+            self.assertEqual(hashlib.sha256(raw).hexdigest(), fingerprint, label)
+
     def test_complete_standard_mit_terms_and_exact_approved_notice(self):
         text = (ROOT / "LICENSE").read_text(encoding="utf-8")
         self.assertEqual(text.splitlines()[:3], ["MIT License", "", "Copyright (c) 2026 Zhenyu Wu"])

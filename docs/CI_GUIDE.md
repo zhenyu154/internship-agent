@@ -1,8 +1,12 @@
 # Offline-test CI preparation (P4B)
 
 The workflow at [`.github/workflows/offline-tests.yml`](../.github/workflows/offline-tests.yml)
-is prepared for a future public repository. **Hosted CI has not run.** There is no
-passing badge, deployment, public repository, release or artifact upload.
+is staged in a private repository. The first hosted run failed: 417 tests completed
+with 4 failures and 189 errors, dominated by candidate-source integrity checks.
+P5A.3 reproduced Windows LF-to-CRLF checkout conversion and adds only exact-path
+[.gitattributes](../.gitattributes) rules for the ten reviewed inputs/manifest.
+No passing hosted result is claimed until the corrective run is inspected. There
+is no deployment, public repository, release or artifact upload.
 
 ## Workflow design and network boundary
 
@@ -106,7 +110,24 @@ requirements.txt`) was also executed from the clean source root with its locked
 dependencies already present. Editable installation, pip check and the import-path
 check passed; this is a source reinstall, not another fresh or online installation.
 The prior 104 private tests remain withheld. Hosted triggers, Actions downloads,
-package-index installation and GitHub-specific YAML execution have not run.
+package-index installation and GitHub-specific YAML execution had not run at P4B.
+The first private hosted run subsequently installed dependencies and passed pip
+check, then failed 417 tests with 4 failures/189 errors. P5A.3 reproduces that exact
+result in a real core.autocrlf=true checkout. All nine hash-listed inputs converted
+from LF to CRLF; the three candidate Markdown sources failed source_sha256 first,
+and initialization-dependent tests failed before reaching their intended checks.
+
+The correction adds ten exact `text eol=lf` path rules: nine byte-reviewed fixture/
+config inputs plus the offline hash manifest. There is no blanket normalization,
+fingerprint regeneration or loader change. Local core.autocrlf=false had preserved
+the original LF bytes, explaining the earlier passing local suite. Fresh Windows-
+style checkout reproduction passes 418 tests (all prior 417 plus one regression),
+zero failures/errors/skips. Synthetic smoke, hashes, rankings/proposals, packaging
+and MIT checks pass with zero audit violations; other files remain CRLF in that
+checkout. Git may reuse existing stat-clean files, so diagnosis rematerialized only
+the ten protected paths in a disposable checkout. No actual evidence file was
+rewritten. Hosted success still requires inspection of the new corrective run;
+local results do not prove GitHub is fixed.
 
 ## Screenshots requiring separate approval
 

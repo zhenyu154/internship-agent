@@ -1,14 +1,17 @@
-# Public Release Manifest: P2 Baseline through P4C.2B
+# Public Release Manifest: P2 Baseline through P5A.3
 
-Local staging only. No Git repository, history, remote, upload or publication was
-created. This tree is incomplete and is not a fully functional public release.
+The sanitized development tree remains local; a separate reviewed release candidate
+has one approved root commit staged privately on GitHub. The first hosted run failed
+byte-sensitive fixture validation; P5A.3 records its narrowly scoped repair below.
+No public publication or visibility change is authorized. This is an incomplete demo.
 Only explicitly reviewed files were included; the original private tree was not
 recursively copied or modified. Repository-relative paths are used throughout.
 
 ## Included file inventory
 
-Reviewed public file count: **91**, including this manifest: 49 P2 files plus
-9 P3A, 4 P3B.1, 7 P3B.2A, 5 P3B.3A, 8 P3B.3B, 4 P4A, 4 P4B and the P4C.2B LICENSE.
+Reviewed public file count: **92**, including this manifest: 49 P2 files plus
+9 P3A, 4 P3B.1, 7 P3B.2A, 5 P3B.3A, 8 P3B.3B, 4 P4A, 4 P4B, the P4C.2B LICENSE
+and the P5A.3 exact-path .gitattributes file.
 The local `.venv/`, generated package metadata/build output and all `data/` validation
 material are excluded from this inventory and from any eventual public repository.
 Source archives add only the three public build-generated metadata files documented
@@ -17,7 +20,7 @@ The wheel retains its 32 application modules plus five dist-info metadata files
 and the approved MIT text at `dist-info/licenses/LICENSE`; it contains no demo assets.
 
 The local audit/review documents `docs/LICENSE_PROVENANCE_AUDIT.md` (P4C.1) and
-`docs/COMPLIANCE_REMEDIATION.md` (P4C.2A) are outside this 91-file release allowlist.
+`docs/COMPLIANCE_REMEDIATION.md` (P4C.2A) are outside this 92-file release allowlist.
 Retain them locally for review; including sanitized compliance documentation in a
 future public repository needs an explicit inventory decision. No report, local
 package metadata or wheel tree is automatically copied into public assets.
@@ -25,11 +28,12 @@ package metadata or wheel tree is automatically copied into public assets.
 | File | Original category | Staging treatment |
 |---|---|---|
 | `.gitignore` | New privacy protection | Public exclusions plus P4A exact exception for the reviewed Windows dependency lock; privacy also enforced by allowlist |
+| `.gitattributes` | New P5A.3 CI-integrity protection | Ten exact LF checkout rules for hash-bound synthetic inputs/manifest; no global normalization or evidence changes |
 | `.github/workflows/offline-tests.yml` | New P4B prepared Windows CI | P4C.2A pins verified official v4.2.2/v5.4.0 commits; read token permission, hash-locked install and offline synthetic checks preserved; hosted run unverified |
 | `.streamlit/config.toml` | New P3B.3B reviewed local configuration | Loopback/headless/manual settings; telemetry/file watching/static serving disabled; no secrets |
 | `AGENTS.md` | New sanitized engineering instructions | Preserves safety conventions; records P3B.3B read-only local Dashboard authorization |
 | `LICENSE` | New P4C.2B MIT license | Complete standard MIT text; Copyright (c) 2026 Zhenyu Wu; first-party material only |
-| `MANIFEST.in` | New P4A explicit source-archive allowlist | Includes exactly the 91 reviewed release files through P4C.2B; runtime/private/ignored data excluded independently of .gitignore |
+| `MANIFEST.in` | New P4A explicit source-archive allowlist | Includes exactly the 92 reviewed release files through P5A.3; runtime/private/ignored data excluded independently of .gitignore |
 | `PUBLIC_RELEASE_MANIFEST.md` | New release documentation | New exact inventory and validation record |
 | `README.md` | New English public presentation | P4B Windows-first onboarding, capabilities/limits, architecture, privacy/human control and AI attribution; online/hosted checks unverified |
 | `config/ashby_boards.example.yaml` | New empty registry example | No live board identities, ownership claims or timestamps |
@@ -111,7 +115,7 @@ package metadata or wheel tree is automatically copied into public assets.
 | `tests/test_models.py` | Reviewed synthetic/offline tests | Reviewed copy; source text unchanged |
 | `tests/test_public_cli.py` | New P3B.3A synthetic/offline tests | 38 argument/selection/listing/ranking/proposal/read-only/privacy/failure integrations; no withheld tests copied |
 | `tests/test_public_dashboard.py` | New P3B.3B synthetic/offline tests | 33 service/AppTest/UI/runtime-boundary regressions; only temporary databases and authored fixtures |
-| `tests/test_packaging.py` | New P4A standard-library regressions | Original 4 checks plus targeted P4C.2B MIT text/metadata/README/archive regressions |
+| `tests/test_packaging.py` | New P4A standard-library regressions | Prior 7 checks plus P5A.3 exact LF rules and unchanged-fixture hashes; integrity assertions preserved |
 | `tests/test_public_documentation.py` | New P4B documentation/CI checks | Five existing tests; pin assertion updated to verified official full commits; permissions, synthetic inputs and guard checks retained |
 | `tests/test_resume_review.py` | New P3B.2A synthetic/offline tests | 47 source/extraction/proposal/structure/privacy regressions; no withheld tests copied |
 | `tests/test_unified_discovery.py` | Reviewed synthetic/offline tests | Public-only test sanitization; see detailed change list |
@@ -942,6 +946,44 @@ not rerun and the prior 414-test result remains historical.
   live ATS, network request, upload, Git/remote, screenshot asset, submission or
   publication was accessed/created. Stop after P4C.2B.
 
+## P5A.3: First hosted CI failure and exact-path checkout repair
+
+- The private root run on 94d6bcaf5395cc808d8d4b17c33f93238095dc84 completed
+  dependency installation and pip check, then ran 417 tests with 4 failures and
+  189 errors. Read-only inspection of run 38217268996 confirms the recurring
+  candidate-source hash error; no job posting, private input or raw log is copied
+  into release files. Repository visibility was independently verified PRIVATE.
+- Committed evidence Markdown files are LF-only and match their approved hashes:
+  profile.md has 15 LF/0 CRLF, experience_bank.md 15/0, verification_report.md 21/0.
+  A real disposable core.autocrlf=true checkout produces respectively 15, 15 and 21
+  CRLF sequences. Their SHA-256 values change, while replacing CRLF with LF returns
+  exactly the committed bytes. The nine offline-manifest inputs all transform the
+  same way. Both candidate-loader and offline fixture validation fail as designed.
+  The full reproduction matches the hosted totals exactly: 417 tests, 4 failures,
+  189 errors, all 189 with the candidate-source message.
+- Prior local core.autocrlf=false preserved LF and therefore passed. Added only
+  ten anchored `.gitattributes` text/eol=lf rules for the nine byte-hashed synthetic
+  config/fixture files plus their offline manifest. There is no wildcard or global
+  normalization. No source content, expected hash, ranking_features.json, claims
+  ledger, loader or integrity check changes. Unprotected checkout files still
+  convert to CRLF; fresh protected checkout files retain their original LF hashes.
+- The release allowlist and MANIFEST.in now contain 92 files, adding only
+  .gitattributes. One focused regression checks exact rule scope, LF bytes and
+  unchanged expected hashes. README and CI Guide explain the failure and fix.
+  Local diagnosis/test logs and reports remain ignored outside the tracked tree.
+- The repaired Windows-style checkout passes **418 tests**, all 417 prior cases
+  plus the new regression, zero failures/errors/skips. Synthetic CLI/SQLite smoke,
+  unchanged ranking scores and resume proposal fingerprint, exact 92-file source/
+  wheel packaging and MIT validation pass. Guards record 0 network, 0 outside input
+  and 0 protected writes; 58 trusted stdlib socket-pair IPC events support AppTest.
+  A passing hosted corrective run is not inferred from these local results.
+- Only six reviewed paths change: .gitattributes, MANIFEST.in, this manifest,
+  README.md, docs/CI_GUIDE.md and tests/test_packaging.py. The original root commit,
+  all source logic/security, synthetic evidence, dependency hashes and LICENSE
+  are preserved. One conditional corrective commit/private push is authorized
+  only after the full validation and independent remote gates. No second attempt,
+  public visibility, extra branch/tag/release, live ATS or submission is authorized.
+
 ## Current compatibility and release blockers
 
 1. The public offline CLI and Streamlit Dashboard, generic ranking and read-only
@@ -979,10 +1021,12 @@ not rerun and the prior 414-test result remains historical.
    outstanding. The exact local Windows snapshot is not a cross-platform lock,
    dependency vulnerability audit or redistribution approval. Any dependency
    change needs separate compatibility/provenance review.
-   Hosted execution, package-index artifact authenticity/availability and selected
-   screenshot assets need further review. P4C.2A could not independently verify
+   The first hosted dependency install completed but full CI failed checkout
+   integrity. The corrective hosted result must be inspected separately. Package
+   artifact authenticity and selected screenshot assets need further review.
+   P4C.2A could not independently verify
    full supply-chain security. Official Action tag identities are verified and pinned;
-   no hosted CI or vulnerability-clearance claim is made.
+   no passing hosted CI or vulnerability-clearance claim is inferred from local tests.
 
-Stop after Step P4C.2B. Git initialization, GitHub staging, repository/remote
-creation, uploads and publication require separate authorization.
+Stop after the single P5A.3 corrective attempt. No additional commits, pushes,
+live features, public release or visibility change is authorized by this step.

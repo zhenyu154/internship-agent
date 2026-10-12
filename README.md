@@ -191,10 +191,14 @@ loopback startup/shutdown through the safety launcher:
 if ($LASTEXITCODE -ne 0) { throw 'Offline public verification failed.' }
 ```
 
-The [prepared Actions workflow](.github/workflows/offline-tests.yml) targets Windows
-and Python 3.12. Future dependency installation may use PyPI; application verification
-stays offline apart from local loopback transport. **Hosted CI has not run.** No
-passing badge, deployment or artifact upload is configured. See [CI Guide](docs/CI_GUIDE.md).
+The [Actions workflow](.github/workflows/offline-tests.yml) targets Windows and
+Python 3.12. Hosted dependency installation uses PyPI; application verification
+stays offline apart from local loopback transport. The first private hosted run
+failed fixture hashes after Windows CRLF conversion. Exact-path
+[.gitattributes](.gitattributes) rules preserve the reviewed LF bytes; integrity
+checks and expected hashes remain unchanged. A passing corrective hosted result
+must be verified separately. No deployment or artifact upload is configured.
+See [CI Guide](docs/CI_GUIDE.md).
 
 ## Architecture
 
@@ -246,7 +250,7 @@ remain explicit.
 |---|---|
 | Windows/Python 3.12 source and extracted sdist | Complete offline workflow verified in P4A; local P4B checks in CI Guide |
 | Wheel-only install | Installation/import/help pass; complete demo unsupported because assets are excluded |
-| Package-index install/hosted Actions | Commands prepared; not executed or claimed passed |
+| Package-index install/hosted Actions | First hosted dependency install passed; full run failed fixture integrity. Corrective run must be independently verified |
 | Linux | UNVERIFIED; available Ubuntu lacked ensurepip and cached compiled wheels target Windows |
 | macOS/other Python or Streamlit versions | Untested; Windows lock is not a portability guarantee |
 
