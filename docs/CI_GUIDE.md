@@ -1,12 +1,13 @@
 # Offline-test CI preparation (P4B)
 
 The workflow at [`.github/workflows/offline-tests.yml`](../.github/workflows/offline-tests.yml)
-is staged in a private repository. The first hosted run failed: 417 tests completed
-with 4 failures and 189 errors, dominated by candidate-source integrity checks.
-P5A.3 reproduced Windows LF-to-CRLF checkout conversion and adds only exact-path
-[.gitattributes](../.gitattributes) rules for the ten reviewed inputs/manifest.
-No passing hosted result is claimed until the corrective run is inspected. There
-is no deployment, public repository, release or artifact upload.
+runs in the [public source repository](https://github.com/zhenyu154/internship-agent).
+Corrective run [38281919278](https://github.com/zhenyu154/internship-agent/actions/runs/38281919278)
+on `caf55d8b389185398a94cecc5919188829571efb` succeeded: **418 tests passed**, zero
+failures, errors or skips. Dependency/source installation, synthetic smoke,
+packaging and MIT checks passed. The first hosted failure and exact-path
+[.gitattributes](../.gitattributes) repair remain documented below.
+There is no tagged GitHub Release, deployment or artifact upload.
 
 ## Workflow design and network boundary
 
@@ -26,19 +27,19 @@ commit-pinned action.yml files over HTTPS, then retained the versions while pinn
 Readable comments remain. The first sandbox requests were blocked, but the approved
 narrow read-only verification returned HTTP 200 and supplied both exact identities.
 This resolves tag mutability, not a full bundled-code/security audit or a latest-
-version claim. Hosted execution remains unverified. Evidence and remaining limits
-are in the local COMPLIANCE_REMEDIATION.md report, excluded from release pending review.
+version claim. Hosted execution is independently verified in the record below.
+The local COMPLIANCE_REMEDIATION.md report remains outside the public repository.
 
-Future hosted checkout/Action setup and dependency installation require network
-access. The dependency step explicitly contacts PyPI with `--require-hashes` and
+Hosted checkout/Action setup and dependency installation require network access.
+The dependency step explicitly contacts PyPI with `--require-hashes` and
 `--only-binary=:all:` using `requirements/windows-py312.lock`; the subsequent
 editable source install has `--no-index` and resolves the installed dependencies.
 This is separate from application verification: synthetic data/tests never call
-ATS or other external services. Package-index availability of every locked wheel,
-Windows Server 2022 behavior and the setup Action's selected Python patch version
-are **not independently verified**. P4A's actual baseline remains Windows 11,
-Python 3.12.10 and local cached wheels. Do not interpret YAML preparation as a
-passed internet-based clean installation.
+ATS or other external services. Run 38281919278 independently verified the locked
+PyPI install, editable source install and full helper on Windows Server 2022 with
+Python 3.12.10. P4A's historical baseline remains Windows 11 and local cached wheels.
+This verifies that hosted snapshot, not future package availability, dependency
+security, Linux/macOS or live ATS integration.
 
 ## Local validation helper
 
@@ -104,7 +105,7 @@ examples in the ranking and resume-review guides executed using their explicit
 synthetic fixtures; their read-only audit counters were all zero. Console help
 was also executed. The `py -3.12` convenience spelling, interactive Read-Host path
 prompt, package-index commands and hosted Action steps were not independently
-executed; PowerShell syntax parsing is not execution evidence.
+executed in P4B; PowerShell syntax parsing is not execution evidence.
 The exact README source-install command (`--no-index --no-build-isolation -r
 requirements.txt`) was also executed from the clean source root with its locked
 dependencies already present. Editable installation, pip check and the import-path
@@ -126,8 +127,17 @@ zero failures/errors/skips. Synthetic smoke, hashes, rankings/proposals, packagi
 and MIT checks pass with zero audit violations; other files remain CRLF in that
 checkout. Git may reuse existing stat-clean files, so diagnosis rematerialized only
 the ten protected paths in a disposable checkout. No actual evidence file was
-rewritten. Hosted success still requires inspection of the new corrective run;
-local results do not prove GitHub is fixed.
+rewritten. The subsequent hosted corrective run 38281919278 independently passed
+all 418 tests, with zero failures/errors/skips and no candidate-source fingerprint
+errors. Locked dependency/source installation, pip check, CLI/SQLite smoke,
+packaging/MIT and native guarded Dashboard startup/shutdown all passed. Hosted
+application audit counters were 0 network, 0 external input and 0 protected writes;
+58 trusted Windows stdlib socket-pair events supported AppTest. These results are
+separate from the local reproduction and from authorized package-index traffic.
+
+The Node.js 20 Action-runtime warning is non-blocking for this verified run:
+GitHub ran the existing pinned Actions on Node.js 24 and the workflow succeeded.
+Future Action maintenance needs separate review; P6A changes no pins or workflow.
 
 ## Screenshots requiring separate approval
 
@@ -163,17 +173,18 @@ compiled wheels. macOS/other versions are untested. The standalone wheel does no
 contain the complete demo. Current onboarding is in the [README](../README.md),
 and exact clean-install evidence is in [the P4A report](CLEAN_INSTALL_VALIDATION.md).
 
-Publication still requires license/notice/provenance approval, safe broader
-integration coverage and final human review. Screenshots need separate approval.
-No live discovery, submission, Resume Apply, runtime feature, Git repository,
-remote, upload or license was introduced. Stop after P4B.
+The source-only offline demonstration is now public after licensing and final
+human publication review. Broader integrations remain deferred; screenshots and
+new assets still need separate approval. P4B itself introduced no live discovery,
+submission, Resume Apply, runtime feature, Git repository, remote, upload or license.
 
 P4C.2B subsequently applies the complete first-party MIT [LICENSE](../LICENSE),
 with Copyright (c) 2026 Zhenyu Wu. Dependencies retain their own terms; no dependency
 wheels/assets or internal compliance reports are added to release artifacts. The
-inventory is now 91 files. The packaging helper checks License-Expression: MIT,
+P4C.2B inventory was 91 files; P5A.3 added .gitattributes for the current 92.
+The packaging helper checks License-Expression: MIT,
 License-File: LICENSE and identical license bytes in sdist and wheel. The wheel
 still excludes demo inputs and contains code plus metadata/license only. Modern
 license metadata uses the already-tested setuptools 84 backend; the build floor
 is now >=84 while the exact Windows lock remains unchanged at 84.0.0. Final P4C.2B
-test results and remaining publication gates are recorded in the release manifest.
+test results and current scope limitations are recorded in the release manifest.

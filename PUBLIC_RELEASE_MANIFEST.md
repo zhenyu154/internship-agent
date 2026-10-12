@@ -1,9 +1,11 @@
-# Public Release Manifest: P2 Baseline through P5A.3
+# Public Release Manifest: P2 Baseline through P6A
 
-The sanitized development tree remains local; a separate reviewed release candidate
-has one approved root commit staged privately on GitHub. The first hosted run failed
-byte-sensitive fixture validation; P5A.3 records its narrowly scoped repair below.
-No public publication or visibility change is authorized. This is an incomplete demo.
+The reviewed source is public at
+[zhenyu154/internship-agent](https://github.com/zhenyu154/internship-agent).
+The approved scope is a Windows-validated, source-checkout-based offline synthetic
+demonstration under MIT. Corrective hosted run 38281919278 passed all 418 public tests;
+the first hosted failure and P5A.3 repair remain recorded below. P6A refreshes only
+documentation; no application, workflow, dependency or visibility change is included.
 Only explicitly reviewed files were included; the original private tree was not
 recursively copied or modified. Repository-relative paths are used throughout.
 
@@ -13,7 +15,7 @@ Reviewed public file count: **92**, including this manifest: 49 P2 files plus
 9 P3A, 4 P3B.1, 7 P3B.2A, 5 P3B.3A, 8 P3B.3B, 4 P4A, 4 P4B, the P4C.2B LICENSE
 and the P5A.3 exact-path .gitattributes file.
 The local `.venv/`, generated package metadata/build output and all `data/` validation
-material are excluded from this inventory and from any eventual public repository.
+material are excluded from this inventory and from the public repository.
 Source archives add only the three public build-generated metadata files documented
 in the P4A report; no existing egg-info/environment directory is release input.
 The wheel retains its 32 application modules plus five dist-info metadata files
@@ -22,20 +24,20 @@ and the approved MIT text at `dist-info/licenses/LICENSE`; it contains no demo a
 The local audit/review documents `docs/LICENSE_PROVENANCE_AUDIT.md` (P4C.1) and
 `docs/COMPLIANCE_REMEDIATION.md` (P4C.2A) are outside this 92-file release allowlist.
 Retain them locally for review; including sanitized compliance documentation in a
-future public repository needs an explicit inventory decision. No report, local
+public repository needs an explicit inventory decision. No report, local
 package metadata or wheel tree is automatically copied into public assets.
 
 | File | Original category | Staging treatment |
 |---|---|---|
 | `.gitignore` | New privacy protection | Public exclusions plus P4A exact exception for the reviewed Windows dependency lock; privacy also enforced by allowlist |
 | `.gitattributes` | New P5A.3 CI-integrity protection | Ten exact LF checkout rules for hash-bound synthetic inputs/manifest; no global normalization or evidence changes |
-| `.github/workflows/offline-tests.yml` | New P4B prepared Windows CI | P4C.2A pins verified official v4.2.2/v5.4.0 commits; read token permission, hash-locked install and offline synthetic checks preserved; hosted run unverified |
+| `.github/workflows/offline-tests.yml` | New P4B prepared Windows CI | P4C.2A pins verified official v4.2.2/v5.4.0 commits; read token permission, hash-locked install and offline synthetic checks preserved; corrective run 38281919278 passed |
 | `.streamlit/config.toml` | New P3B.3B reviewed local configuration | Loopback/headless/manual settings; telemetry/file watching/static serving disabled; no secrets |
 | `AGENTS.md` | New sanitized engineering instructions | Preserves safety conventions; records P3B.3B read-only local Dashboard authorization |
 | `LICENSE` | New P4C.2B MIT license | Complete standard MIT text; Copyright (c) 2026 Zhenyu Wu; first-party material only |
 | `MANIFEST.in` | New P4A explicit source-archive allowlist | Includes exactly the 92 reviewed release files through P5A.3; runtime/private/ignored data excluded independently of .gitignore |
 | `PUBLIC_RELEASE_MANIFEST.md` | New release documentation | New exact inventory and validation record |
-| `README.md` | New English public presentation | P4B Windows-first onboarding, capabilities/limits, architecture, privacy/human control and AI attribution; online/hosted checks unverified |
+| `README.md` | New English public presentation | Windows-first source onboarding, capabilities/limits, architecture, privacy/human control and AI attribution; P6A records public availability and verified Windows hosted installation/CI |
 | `config/ashby_boards.example.yaml` | New empty registry example | No live board identities, ownership claims or timestamps |
 | `config/greenhouse_boards.example.yaml` | New empty registry example | No live board identities, ownership claims or timestamps |
 | `config/lever_sites.example.yaml` | New empty registry example | No live board identities, ownership claims or timestamps |
@@ -984,7 +986,26 @@ not rerun and the prior 414-test result remains historical.
   only after the full validation and independent remote gates. No second attempt,
   public visibility, extra branch/tag/release, live ATS or submission is authorized.
 
-## Current compatibility and release blockers
+## P6A: Post-publication documentation refresh
+
+- Public visibility, main at caf55d8b389185398a94cecc5919188829571efb, the two
+  approved commits and exact 92-file tree were independently verified before edits.
+  No tag or GitHub Release exists. The P5B audit remains local-only and untracked.
+- Hosted run [38281919278](https://github.com/zhenyu154/internship-agent/actions/runs/38281919278)
+  independently succeeded on that corrective commit: **418 tests**, zero failures,
+  errors or skips, and no candidate-source fingerprint errors. Locked PyPI dependencies,
+  editable source installation, pip check, synthetic smoke, packaging/MIT and native
+  guarded Dashboard startup/shutdown passed on Windows Server 2022/Python 3.12.10.
+  Application audit counters were 0 network, 0 external input and 0 protected writes.
+- README, CI Guide and this manifest refresh current publication/CI wording only.
+  Historical milestone counts, failures and limitations remain intact. All source,
+  fixtures, hashes, schema, dependencies, workflow, license, .gitattributes and
+  packaging rules remain unchanged; the release inventory stays at 92 files.
+- The public project remains an offline fictional demonstration, with local read-only
+  Dashboard operation, proposals only, no live discovery, submission or resume Apply.
+  Linux/macOS and standalone-wheel demo operation are not newly validated.
+
+## Current compatibility and deferred work
 
 1. The public offline CLI and Streamlit Dashboard, generic ranking and read-only
    resume proposals are available. Full personalized/general-user interfaces,
@@ -1015,18 +1036,18 @@ not rerun and the prior 414-test result remains historical.
    added. Third-party licenses are preserved. Any newly discovered source-provenance
    exception must be reviewed; binary/vendor-component uncertainties are recorded
    in the local remediation report and must be resolved if those components are
-   ever redistributed. The planned initial release distributes source only.
+   ever redistributed. The published demonstration distributes source only.
 6. P4A completes clean Windows source/sdist installation and existing synthetic
-   integration validation. Final staged publication review/approval remains
-   outstanding. The exact local Windows snapshot is not a cross-platform lock,
-   dependency vulnerability audit or redistribution approval. Any dependency
+   integration validation. P5B final review and public repository publication are
+   complete for the offline source-only demonstration. The exact Windows snapshot
+   is not a cross-platform lock, dependency vulnerability audit or redistribution approval. Any dependency
    change needs separate compatibility/provenance review.
-   The first hosted dependency install completed but full CI failed checkout
-   integrity. The corrective hosted result must be inspected separately. Package
+   The first hosted run failed checkout integrity; corrective run 38281919278
+   subsequently passed installation and all 418 tests. Package
    artifact authenticity and selected screenshot assets need further review.
    P4C.2A could not independently verify
    full supply-chain security. Official Action tag identities are verified and pinned;
-   no passing hosted CI or vulnerability-clearance claim is inferred from local tests.
+   hosted success is independently verified, while vulnerability clearance is not asserted.
 
-Stop after the single P5A.3 corrective attempt. No additional commits, pushes,
-live features, public release or visibility change is authorized by this step.
+P6A authorizes one documentation commit/push only. Stop after that maintenance task;
+no new feature, tag, GitHub Release, deployment or visibility change is included.

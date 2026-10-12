@@ -7,6 +7,9 @@ tracking and evidence-based review of one general resume.
 record is authored fiction.** It demonstrates the workflow and public backend;
 real applicant onboarding is deferred.
 
+Public source: [zhenyu154/internship-agent](https://github.com/zhenyu154/internship-agent).
+The Windows source-checkout workflow is verified; no tagged GitHub Release exists.
+
 ## What works today
 
 - Ten fictional jobs in SQLite, with deterministic ranking and traceable evidence.
@@ -35,15 +38,18 @@ Use Python 3.12 and PowerShell, with a new `.venv` inside the source root.
 Streamlit is pinned because the safety launcher uses version-sensitive APIs.
 Do not upgrade it or bypass the launcher with an unrestricted `streamlit run`.
 
-Start with a reviewed source checkout or extracted source archive. Open PowerShell
+Clone the public repository or download and extract its source ZIP. Open PowerShell
 in the folder containing this README, `pyproject.toml`, `demo/` and `scripts/`.
-No public repository URL or release exists yet. Do not copy another project's
-venv or database. Run every command below from this **source root**.
+Do not copy another project's venv or database. Run every command below from this
+**source root**; a standalone wheel does not include the complete demo assets.
 
 [`requirements/windows-py312.lock`](requirements/windows-py312.lock) records
 40 tested dependency versions and wheel hashes for Windows/Python 3.12. It is not
 a cross-platform lock or security certification. P4A verified local-wheel offline
-installation; package-index installation and hosted CI have **not** independently run.
+installation. Hosted run [38281919278](https://github.com/zhenyu154/internship-agent/actions/runs/38281919278)
+also verified locked PyPI dependencies and source installation on Windows Server 2022
+with Python 3.12.10. Dependency installation needs network access or separately supplied
+reviewed wheels; the runtime demonstration remains synthetic and offline.
 
 ## Install
 
@@ -78,12 +84,13 @@ $demoWheels = Read-Host 'Path to your reviewed local wheel directory'
 if ($LASTEXITCODE -ne 0) { throw 'Offline dependency installation failed.' }
 ```
 
-### 2B. Install from a package index — documented, not independently verified
+### 2B. Install from a package index — verified in Windows CI
 
 Use this **instead of 2A** when internet-based package installation is appropriate
 and authorized. It contacts PyPI for dependencies, not ATS services. Exact locked
-wheels must be available and hash-matching. No online clean install was executed
-in P4A/P4B; index availability of every locked artifact is unverified.
+wheels must be available and hash-matching. P4A/P4B did not execute an online clean
+install; hosted run 38281919278 subsequently passed this dependency step. That
+verifies the tested Windows snapshot, not future index availability or other platforms.
 
 ```powershell
 & .\.venv\Scripts\python.exe -B -m pip --isolated --disable-pip-version-check install --index-url https://pypi.org/simple --no-cache-dir --only-binary=:all: --require-hashes -r requirements/windows-py312.lock
@@ -196,8 +203,11 @@ Python 3.12. Hosted dependency installation uses PyPI; application verification
 stays offline apart from local loopback transport. The first private hosted run
 failed fixture hashes after Windows CRLF conversion. Exact-path
 [.gitattributes](.gitattributes) rules preserve the reviewed LF bytes; integrity
-checks and expected hashes remain unchanged. A passing corrective hosted result
-must be verified separately. No deployment or artifact upload is configured.
+checks and expected hashes remain unchanged. Corrective run
+[38281919278](https://github.com/zhenyu154/internship-agent/actions/runs/38281919278)
+on `caf55d8b389185398a94cecc5919188829571efb` passed **418 public tests**, with
+zero failures, errors or skips, plus synthetic smoke, packaging and MIT checks.
+No deployment or artifact upload is configured.
 See [CI Guide](docs/CI_GUIDE.md).
 
 ## Architecture
@@ -250,7 +260,7 @@ remain explicit.
 |---|---|
 | Windows/Python 3.12 source and extracted sdist | Complete offline workflow verified in P4A; local P4B checks in CI Guide |
 | Wheel-only install | Installation/import/help pass; complete demo unsupported because assets are excluded |
-| Package-index install/hosted Actions | First hosted dependency install passed; full run failed fixture integrity. Corrective run must be independently verified |
+| Package-index install/hosted Actions | Windows Server 2022/Python 3.12.10 dependency and source installation passed; corrective run 38281919278 passed all 418 tests |
 | Linux | UNVERIFIED; available Ubuntu lacked ensurepip and cached compiled wheels target Windows |
 | macOS/other Python or Streamlit versions | Untested; Windows lock is not a portability guarantee |
 
@@ -275,11 +285,13 @@ the notice `Copyright (c) 2026 Zhenyu Wu`. Third-party dependencies retain their
 own licenses. MIT does not grant rights to ATS providers, employer job descriptions,
 logos, trademarks or other external content.
 
-No GitHub release exists. The human first-party licensing authority review is
-complete to the best of the user's knowledge; it is not an independent ownership
-finding or guarantee of AI-output copyrightability. Remaining compliance and
-publication approval, broader real-user workflows and safe integration coverage,
-unverified platforms and final publication review remain blockers. The
+The repository is public; no tagged GitHub Release exists. The human first-party
+licensing authority review is complete to the best of the user's knowledge;
+it is not an independent ownership
+finding or guarantee of AI-output copyrightability. Publication review is complete
+for this source-only offline demo. Broader real-user workflows, additional safe
+integration coverage and unverified platforms remain future work. Dependency
+bundles or new assets would require separate provenance review. The
 [release manifest](PUBLIC_RELEASE_MANIFEST.md) records inventory, exclusions and
 historical results. Public screenshots await separate approval.
 
