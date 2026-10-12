@@ -1,0 +1,167 @@
+{
+  "version": 1,
+  "notice": "SYNTHETIC DEMONSTRATION DATA — NOT REAL JOB POSTINGS.",
+  "candidate_mapping_sha256": "0a863fb7d68e439fc142ad62a52133cc45074b48e145e55ab8403b8662b01477",
+  "candidate_source_sha256": {
+    "profile.md": "8e1a7677f983cffa8ad9b940f6f93bffd7bf1857ae1859c690ddbebb9a94c5a2",
+    "experience_bank.md": "59d0bbb821b04db88ac4fdfc5fbeb976c5fb5889d7899629ba6f3b0901f0f14e",
+    "verification_report.md": "63bec1621010add12c0b24bd859a148330c96ff568270eac43b7d7e29ebf0277"
+  },
+  "source_sha256": {
+    "observations.md": "93bede14a8a6fd6b1d8f5ea633736472980e0aab86879e29cca9dd15074e707d"
+  },
+  "claims": [
+    {
+      "id": "education",
+      "text": "Fictional education: Bachelor of Science in Computer Science at Fictional Example Institute; expected graduation May 2028.",
+      "status": "CONFIRMED",
+      "evidence": [
+        {
+          "file": "observations.md",
+          "quote": "Fictional education: Bachelor of Science in Computer Science at Fictional Example Institute; expected graduation May 2028."
+        }
+      ],
+      "limitations": [
+        "Authored synthetic evidence only; no real applicant facts established."
+      ],
+      "qualifiers": {
+        "deployment": "not_applicable",
+        "evaluation": "not_applicable",
+        "result": "not_applicable",
+        "publication": "not_applicable"
+      }
+    },
+    {
+      "id": "grid_simulation",
+      "text": "Demo Grid Navigation compared path planning methods in a toy simulation; no physical robot deployment.",
+      "status": "CONFIRMED",
+      "evidence": [
+        {
+          "file": "observations.md",
+          "quote": "Demo Grid Navigation compared path planning methods in a toy simulation; no physical robot deployment."
+        }
+      ],
+      "limitations": [
+        "Simulation only; no physical deployment or real-world performance claim."
+      ],
+      "qualifiers": {
+        "deployment": "simulation",
+        "evaluation": "not_applicable",
+        "result": "unknown",
+        "publication": "not_applicable"
+      }
+    },
+    {
+      "id": "classifier_validation",
+      "text": "Demo Shape Classifier used PyTorch on generated shapes; evaluation used a separate synthetic validation split; real-world generalization is unestablished.",
+      "status": "CONFIRMED",
+      "evidence": [
+        {
+          "file": "observations.md",
+          "quote": "Demo Shape Classifier used PyTorch on generated shapes; evaluation used a separate synthetic validation split; real-world generalization is unestablished."
+        }
+      ],
+      "limitations": [
+        "Synthetic validation split only; no measured performance or real-world generalization established."
+      ],
+      "qualifiers": {
+        "deployment": "simulation",
+        "evaluation": "held_out",
+        "result": "unknown",
+        "publication": "not_applicable"
+      }
+    },
+    {
+      "id": "toy_seen_measurement",
+      "text": "Toy evaluation counted 8 of 10 correct labels on seen synthetic examples; no held-out measurement or production readiness was established.",
+      "status": "CONFIRMED",
+      "evidence": [
+        {
+          "file": "observations.md",
+          "quote": "Toy evaluation counted 8 of 10 correct labels on seen synthetic examples; no held-out measurement or production readiness was established."
+        }
+      ],
+      "limitations": [
+        "Invented measured count within fiction only; no held-out evidence or production readiness."
+      ],
+      "qualifiers": {
+        "deployment": "simulation",
+        "evaluation": "seen",
+        "result": "measured",
+        "publication": "not_applicable"
+      }
+    },
+    {
+      "id": "publication_pending",
+      "text": "Publication status: pending; no acceptance evidence exists.",
+      "status": "PENDING",
+      "evidence": [
+        {
+          "file": "observations.md",
+          "quote": "Publication status: pending; no acceptance evidence exists."
+        }
+      ],
+      "limitations": [
+        "Acceptance is unverified; pending must never be promoted to accepted."
+      ],
+      "qualifiers": {
+        "deployment": "not_applicable",
+        "evaluation": "not_applicable",
+        "result": "not_applicable",
+        "publication": "pending"
+      }
+    },
+    {
+      "id": "skills",
+      "text": "Fictional skills: Python, NumPy, PyTorch, evaluation and path planning.",
+      "status": "CONFIRMED",
+      "evidence": [
+        {
+          "file": "observations.md",
+          "quote": "Fictional skills: Python, NumPy, PyTorch, evaluation and path planning."
+        }
+      ],
+      "limitations": [
+        "Authored synthetic evidence only; no real applicant facts established."
+      ],
+      "qualifiers": {
+        "deployment": "not_applicable",
+        "evaluation": "not_applicable",
+        "result": "not_applicable",
+        "publication": "not_applicable"
+      }
+    }
+  ],
+  "rules": [
+    {
+      "id": "repair_deployment",
+      "before": "Demo Grid Navigation deployed path planning on physical robots.",
+      "claim_id": "grid_simulation"
+    },
+    {
+      "id": "repair_generalization",
+      "before": "Demo Shape Classifier achieved validated real-world performance.",
+      "claim_id": "classifier_validation"
+    },
+    {
+      "id": "repair_evaluation",
+      "before": "Toy evaluation achieved 80% accuracy on held-out data and implies production readiness.",
+      "claim_id": "toy_seen_measurement"
+    },
+    {
+      "id": "repair_publication",
+      "before": "Publication accepted at a fictional venue.",
+      "claim_id": "publication_pending"
+    },
+    {
+      "id": "add_supported_skills",
+      "before": "",
+      "claim_id": "skills"
+    }
+  ],
+  "limitations": [
+    "All statements and observations in this ledger are invented synthetic data.",
+    "Pending and inferred claims are not verified facts; unknown content needs human evidence review.",
+    "One general resume only; no job-specific versions or automatic approval."
+  ]
+}

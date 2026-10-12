@@ -1,0 +1,19 @@
+# Synthetic test fixture only. All identities and timestamps are fictional.
+# Active records model mocked inputs; never use these entries for live discovery.
+version: 1
+boards:
+  - company_name: Example Greenhouse Alpha
+    board_token: example-gh-alpha
+    source_url: https://boards.greenhouse.io/example-gh-alpha
+    verified_at: "2025-01-01T00:00:00Z"
+    active: true
+  - company_name: Example Greenhouse Beta
+    board_token: example-gh-beta
+    source_url: https://boards.greenhouse.io/example-gh-beta
+    verified_at: "2025-01-01T00:00:00Z"
+    active: true
+  - company_name: Example Greenhouse Gamma
+    board_token: example-gh-gamma
+    source_url: https://boards.greenhouse.io/example-gh-gamma
+    verified_at: "2025-01-01T00:00:00Z"
+    active: true

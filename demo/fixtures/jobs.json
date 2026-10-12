@@ -1,0 +1,198 @@
+{
+  "version": 1,
+  "notice": "SYNTHETIC DEMONSTRATION DATA — NOT REAL JOB POSTINGS.",
+  "jobs": [
+    {
+      "job": {
+        "title": "Robotics Software Intern — Summer 2027",
+        "company": "Fictional Demo Robotics Alpha",
+        "location": "Remote, United States",
+        "url": "https://example.test/internships/demo-001",
+        "source": "synthetic_demo",
+        "source_job_id": "demo-001",
+        "description": "SYNTHETIC DEMONSTRATION DATA — NOT REAL JOB POSTINGS.\n\nResponsibilities\nDevelop robot control software for an invented mobile agent in simulation. Evaluate route failures with Python.\nRequirements\nEnrollment in a computer science bachelor program.\nSummer 2027 internship cohort."
+      },
+      "metadata": {
+        "internship_term": "Summer 2027",
+        "degree_requirements": "Bachelor's enrollment",
+        "graduation_window": "2028 graduation",
+        "work_authorization": "UNKNOWN"
+      },
+      "application": {
+        "status": "RESEARCHING",
+        "notes": "SYNTHETIC DEMONSTRATION DATA — NOT REAL JOB POSTINGS. Illustrative research note: review the simulated navigation duties; eligibility remains unknown."
+      }
+    },
+    {
+      "job": {
+        "title": "Machine Learning Intern — Summer 2027",
+        "company": "Fictional Demo Learning Beta",
+        "location": "Seattle, WA",
+        "url": "https://example.test/internships/demo-002",
+        "source": "synthetic_demo",
+        "source_job_id": "demo-002",
+        "description": "SYNTHETIC DEMONSTRATION DATA — NOT REAL JOB POSTINGS.\n\nResponsibilities\nTrain a small PyTorch model on generated shapes and evaluate validation errors.\nRequirements\nCurrent bachelor or master enrollment.\nSummer 2027 internship cohort."
+      },
+      "metadata": {
+        "internship_term": "Summer 2027",
+        "degree_requirements": "Bachelor's or Master's enrollment",
+        "graduation_window": "UNKNOWN",
+        "work_authorization": "UNKNOWN"
+      },
+      "application": {
+        "status": "PREPARING",
+        "notes": "SYNTHETIC DEMONSTRATION DATA — NOT REAL JOB POSTINGS. Illustrative preparation note: compare toy project evidence; no materials or forms have been prepared."
+      }
+    },
+    {
+      "job": {
+        "title": "Simulation Intern — Summer 2027",
+        "company": "Fictional Demo Simulation Gamma",
+        "location": "San Francisco, CA",
+        "url": "https://example.test/internships/demo-003",
+        "source": "synthetic_demo",
+        "source_job_id": "demo-003",
+        "description": "SYNTHETIC DEMONSTRATION DATA — NOT REAL JOB POSTINGS.\n\nResponsibilities\nBuild Python simulation environments for invented warehouse routes. Compare path planning algorithms.\nRequirements\nStudent enrollment; graduation window unspecified.\nSummer 2027 internship cohort."
+      },
+      "metadata": {
+        "internship_term": "Summer 2027",
+        "degree_requirements": "Student enrollment",
+        "graduation_window": "UNKNOWN",
+        "work_authorization": "UNKNOWN"
+      },
+      "application": {
+        "status": "READY_TO_APPLY",
+        "notes": "SYNTHETIC DEMONSTRATION DATA — NOT REAL JOB POSTINGS. Illustrative status only: no real application is ready, submitted or authorized by this record."
+      }
+    },
+    {
+      "job": {
+        "title": "Computer Vision Intern — Summer 2027",
+        "company": "Fictional Demo Vision Delta",
+        "location": "New York, NY",
+        "url": "https://example.test/internships/demo-004",
+        "source": "synthetic_demo",
+        "source_job_id": "demo-004",
+        "description": "SYNTHETIC DEMONSTRATION DATA — NOT REAL JOB POSTINGS.\n\nResponsibilities\nImplement a computer vision classifier using generated geometric images. Evaluate errors across synthetic lighting settings.\nRequirements\nDegree requirements are unspecified.\nSummer 2027 internship cohort."
+      },
+      "metadata": {
+        "internship_term": "Summer 2027",
+        "degree_requirements": "UNKNOWN",
+        "graduation_window": "UNKNOWN",
+        "work_authorization": "UNKNOWN"
+      },
+      "application": {
+        "status": "NOT_STARTED",
+        "notes": "SYNTHETIC DEMONSTRATION DATA — NOT REAL JOB POSTINGS. Illustrative note: sponsorship and degree requirements need human review."
+      }
+    },
+    {
+      "job": {
+        "title": "Perception Intern",
+        "company": "Fictional Demo Perception Epsilon",
+        "location": "UNKNOWN",
+        "url": "https://example.test/internships/demo-005",
+        "source": "synthetic_demo",
+        "source_job_id": "demo-005",
+        "description": "SYNTHETIC DEMONSTRATION DATA — NOT REAL JOB POSTINGS.\n\nResponsibilities\nEvaluate perception algorithms using a generated image stream. Develop Python evaluation scripts.\nRequirements\nInternship term, degree and work authorization are unspecified."
+      },
+      "metadata": {
+        "internship_term": "UNKNOWN",
+        "degree_requirements": "UNKNOWN",
+        "graduation_window": "UNKNOWN",
+        "work_authorization": "UNKNOWN"
+      },
+      "application": null
+    },
+    {
+      "job": {
+        "title": "Robotics Machine Learning Intern — Summer 2027",
+        "company": "Fictional Demo Autonomy Zeta",
+        "location": "Remote, United States",
+        "url": "https://example.test/internships/demo-006",
+        "source": "synthetic_demo",
+        "source_job_id": "demo-006",
+        "description": "SYNTHETIC DEMONSTRATION DATA — NOT REAL JOB POSTINGS.\n\nResponsibilities\nTrain machine learning models for simulated route choices. Evaluate failure modes in a toy environment.\nRequirements\nStudent enrollment. The fictional posting does not support sponsorship.\nSummer 2027 internship cohort."
+      },
+      "metadata": {
+        "internship_term": "Summer 2027",
+        "degree_requirements": "Student enrollment",
+        "graduation_window": "UNKNOWN",
+        "work_authorization": "Synthetic posting does not support sponsorship; candidate authorization UNKNOWN"
+      },
+      "application": null
+    },
+    {
+      "job": {
+        "title": "Machine Learning Research Intern (PhD only) — Summer 2027",
+        "company": "Fictional Demo Research Eta",
+        "location": "Seattle, WA",
+        "url": "https://example.test/internships/demo-007",
+        "source": "synthetic_demo",
+        "source_job_id": "demo-007",
+        "description": "SYNTHETIC DEMONSTRATION DATA — NOT REAL JOB POSTINGS.\n\nResponsibilities\nRun controlled machine learning experiments on generated sequences.\nRequirements\nPhD required.\nSummer 2027 internship cohort."
+      },
+      "metadata": {
+        "internship_term": "Summer 2027",
+        "degree_requirements": "PhD required",
+        "graduation_window": "UNKNOWN",
+        "work_authorization": "UNKNOWN"
+      },
+      "application": null
+    },
+    {
+      "job": {
+        "title": "Simulation Intern — Fall 2027",
+        "company": "Fictional Demo Cohort Theta",
+        "location": "Remote, United States",
+        "url": "https://example.test/internships/demo-008",
+        "source": "synthetic_demo",
+        "source_job_id": "demo-008",
+        "description": "SYNTHETIC DEMONSTRATION DATA — NOT REAL JOB POSTINGS.\n\nResponsibilities\nDevelop simulation tooling and evaluate synthetic navigation scenarios.\nRequirements\nStudent enrollment.\nFall 2027 internship cohort."
+      },
+      "metadata": {
+        "internship_term": "Fall 2027",
+        "degree_requirements": "Student enrollment",
+        "graduation_window": "UNKNOWN",
+        "work_authorization": "UNKNOWN"
+      },
+      "application": null
+    },
+    {
+      "job": {
+        "title": "Marketing Intern — Summer 2027",
+        "company": "Fictional Demo Communications Iota",
+        "location": "Remote, United States",
+        "url": "https://example.test/internships/demo-009",
+        "source": "synthetic_demo",
+        "source_job_id": "demo-009",
+        "description": "SYNTHETIC DEMONSTRATION DATA — NOT REAL JOB POSTINGS.\n\nResponsibilities\nDraft fictional campaign plans and organize imaginary event schedules.\nRequirements\nInterest in marketing.\nSummer 2027 internship cohort."
+      },
+      "metadata": {
+        "internship_term": "Summer 2027",
+        "degree_requirements": "UNKNOWN",
+        "graduation_window": "UNKNOWN",
+        "work_authorization": "UNKNOWN"
+      },
+      "application": null
+    },
+    {
+      "job": {
+        "title": "Mechanical Engineering Intern — Summer 2027",
+        "company": "Fictional Demo Mechanisms Kappa",
+        "location": "Seattle, WA",
+        "url": "https://example.test/internships/demo-010",
+        "source": "synthetic_demo",
+        "source_job_id": "demo-010",
+        "description": "SYNTHETIC DEMONSTRATION DATA — NOT REAL JOB POSTINGS.\n\nResponsibilities\nSketch fictional bracket concepts and review mechanical drawings. No software implementation is included.\nRequirements\nMechanical engineering student enrollment.\nSummer 2027 internship cohort."
+      },
+      "metadata": {
+        "internship_term": "Summer 2027",
+        "degree_requirements": "Mechanical engineering student enrollment",
+        "graduation_window": "UNKNOWN",
+        "work_authorization": "UNKNOWN"
+      },
+      "application": null
+    }
+  ]
+}

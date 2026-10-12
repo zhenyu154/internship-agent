@@ -1,0 +1,22 @@
+[server]
+address = "127.0.0.1"
+port = 8501
+headless = true
+fileWatcherType = "none"
+runOnSave = false
+enableStaticServing = false
+enableCORS = true
+enableXsrfProtection = true
+
+[browser]
+serverAddress = "127.0.0.1"
+gatherUsageStats = false
+
+[client]
+showErrorDetails = "none"
+toolbarMode = "minimal"
+
+[theme]
+base = "light"
+font = "sans-serif"
+primaryColor = "#2563EB"

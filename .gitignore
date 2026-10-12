@@ -1,0 +1,73 @@
+# Private inputs and runtime outputs
+candidate/
+resumes/
+data/
+reports/
+logs/
+private/
+credentials/
+secrets/
+screenshots/
+# Local settings; example templates remain includable
+config/search_preferences.yaml
+config/greenhouse_boards.yaml
+config/lever_sites.yaml
+config/ashby_boards.yaml
+config/*.local.*
+local_settings.*
+.streamlit/secrets.toml
+.streamlit/secrets.*
+.env
+.env.*
+# Credentials and identity material
+.aws/
+.ssh/
+*.pem
+*.key
+*.p12
+*.pfx
+credentials*.json
+credentials*.yaml
+secrets*.json
+secrets*.yaml
+*token*.json
+session*.json
+cookies*.json
+# Databases, backups, locks and private document artifacts
+*.sqlite*
+*.db
+*.db-*
+*-wal
+*-shm
+*-journal
+*.bak*
+*.backup*
+*.lock
+# Reviewed dependency snapshot; runtime/database lock files remain excluded.
+!requirements/windows-py312.lock
+*.docx
+*.pdf
+*.log
+# Virtual environments, caches and builds
+.venv/
+venv/
+env/
+__pycache__/
+pycache/
+*.py[cod]
+*.egg-info/
+.eggs/
+build/
+dist/
+.pytest_cache/
+.mypy_cache/
+.ruff_cache/
+.coverage*
+htmlcov/
+.tox/
+.nox/
+# Editor and OS-local files
+.vscode/
+.idea/
+Thumbs.db
+.DS_Store

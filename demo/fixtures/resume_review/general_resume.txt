@@ -1,0 +1,9 @@
+Synthetic Candidate Demo-01 — general resume review fixture
+SYNTHETIC DEMONSTRATION DATA — NOT REAL JOB POSTINGS.
+
+Fictional education: Bachelor of Science in Computer Science at Fictional Example Institute; expected graduation May 2028.
+Demo Grid Navigation deployed path planning on physical robots.
+Demo Shape Classifier achieved validated real-world performance.
+Toy evaluation achieved 80% accuracy on held-out data and implies production readiness.
+Publication accepted at a fictional venue.
+Professional experience: unknown synthetic entry requiring review.

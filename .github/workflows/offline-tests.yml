@@ -1,0 +1,52 @@
+name: Offline synthetic demo (Windows)
+
+on:
+  push:
+  pull_request:
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+jobs:
+  offline-demo:
+    runs-on: windows-2022
+    timeout-minutes: 20
+    defaults:
+      run:
+        shell: pwsh
+    env:
+      PYTHONDONTWRITEBYTECODE: '1'
+    steps:
+      # Exact official tag-ref commit identities verified in P4C.2A; no version upgrade.
+      - name: Check out the public source
+        uses: actions/checkout@11bd71901bbe5b1630ceea73d27597364c9af683 # v4.2.2
+        with:
+          persist-credentials: false
+          fetch-depth: 1
+      - name: Select Python 3.12
+        uses: actions/setup-python@42375524e23c412d93fb67b49958b491fce71c38 # v5.4.0
+        with:
+          python-version: '3.12'
+      - name: Create an isolated environment
+        run: |
+          Remove-Item Env:PYTHONPATH -ErrorAction SilentlyContinue
+          python -B -m venv .venv
+          if ($LASTEXITCODE -ne 0) { throw 'Environment creation failed.' }
+      - name: Install locked Windows dependencies (package-index network)
+        run: |
+          & .\.venv\Scripts\python.exe -B -m pip --isolated --disable-pip-version-check install --index-url https://pypi.org/simple --no-cache-dir --only-binary=:all: --require-hashes -r requirements/windows-py312.lock
+          if ($LASTEXITCODE -ne 0) { throw 'Locked dependency installation failed.' }
+      - name: Install the source package without an index
+        run: |
+          & .\.venv\Scripts\python.exe -B -m pip --isolated --disable-pip-version-check install --no-index --no-build-isolation -r requirements.txt
+          if ($LASTEXITCODE -ne 0) { throw 'Source installation failed.' }
+      - name: Check dependency consistency
+        run: |
+          & .\.venv\Scripts\python.exe -B -m pip --isolated --disable-pip-version-check check
+          if ($LASTEXITCODE -ne 0) { throw 'Dependency check failed.' }
+      - name: Verify offline tests, synthetic workflow and packaging
+        run: |
+          Remove-Item Env:PYTHONPATH -ErrorAction SilentlyContinue
+          & .\.venv\Scripts\python.exe -B scripts/verify_public_demo.py
+          if ($LASTEXITCODE -ne 0) { throw 'Offline public verification failed.' }

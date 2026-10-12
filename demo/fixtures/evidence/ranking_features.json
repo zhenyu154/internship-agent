@@ -1,0 +1,132 @@
+{
+  "notice": "SYNTHETIC DEMONSTRATION DATA — NOT REAL JOB POSTINGS.",
+  "version": 1,
+  "review_basis": "local_source_review",
+  "source_sha256": {
+    "profile.md": "8e1a7677f983cffa8ad9b940f6f93bffd7bf1857ae1859c690ddbebb9a94c5a2",
+    "experience_bank.md": "59d0bbb821b04db88ac4fdfc5fbeb976c5fb5889d7899629ba6f3b0901f0f14e",
+    "verification_report.md": "63bec1621010add12c0b24bd859a148330c96ff568270eac43b7d7e29ebf0277"
+  },
+  "features": [
+    {
+      "id": "python",
+      "status": "SUPPORTED",
+      "evidence": [
+        {
+          "file": "experience_bank.md",
+          "quote": "Demo Grid Navigation used Python and NumPy to compare path planning methods in"
+        },
+        {
+          "file": "verification_report.md",
+          "quote": "CONFIRMED (fiction only): Demo Grid Navigation used Python, NumPy, path planning"
+        }
+      ]
+    },
+    {
+      "id": "numpy",
+      "status": "SUPPORTED",
+      "evidence": [
+        {
+          "file": "experience_bank.md",
+          "quote": "Demo Grid Navigation used Python and NumPy to compare path planning methods in"
+        },
+        {
+          "file": "verification_report.md",
+          "quote": "CONFIRMED (fiction only): Demo Grid Navigation used Python, NumPy, path planning"
+        }
+      ]
+    },
+    {
+      "id": "planning",
+      "status": "SUPPORTED",
+      "evidence": [
+        {
+          "file": "experience_bank.md",
+          "quote": "an invented grid simulation. The exercise included evaluation of blocked routes."
+        },
+        {
+          "file": "verification_report.md",
+          "quote": "CONFIRMED (fiction only): Demo Grid Navigation used Python, NumPy, path planning"
+        }
+      ]
+    },
+    {
+      "id": "evaluation",
+      "status": "SUPPORTED",
+      "evidence": [
+        {
+          "file": "experience_bank.md",
+          "quote": "The exercise included evaluation using a separate synthetic validation split."
+        },
+        {
+          "file": "verification_report.md",
+          "quote": "CONFIRMED (fiction only): Demo Shape Classifier used PyTorch and evaluation on"
+        }
+      ]
+    },
+    {
+      "id": "pytorch",
+      "status": "SUPPORTED",
+      "evidence": [
+        {
+          "file": "experience_bank.md",
+          "quote": "Demo Shape Classifier used PyTorch to train a toy classifier on generated shapes."
+        },
+        {
+          "file": "verification_report.md",
+          "quote": "CONFIRMED (fiction only): Demo Shape Classifier used PyTorch and evaluation on"
+        }
+      ]
+    }
+  ],
+  "projects": [
+    {
+      "id": "demo_grid_navigation",
+      "features": [
+        "python",
+        "numpy",
+        "planning",
+        "evaluation"
+      ],
+      "evidence": [
+        {
+          "file": "experience_bank.md",
+          "quote": "Demo Grid Navigation used Python and NumPy to compare path planning methods in"
+        }
+      ]
+    },
+    {
+      "id": "demo_shape_classifier",
+      "features": [
+        "pytorch",
+        "evaluation"
+      ],
+      "evidence": [
+        {
+          "file": "experience_bank.md",
+          "quote": "Demo Shape Classifier used PyTorch to train a toy classifier on generated shapes."
+        }
+      ]
+    }
+  ],
+  "limitations": [
+    {
+      "id": "simulation_only",
+      "evidence": [
+        {
+          "file": "verification_report.md",
+          "quote": "All project activity is simulation or synthetic data only; no physical deployment."
+        }
+      ]
+    },
+    {
+      "id": "generalization_unestablished",
+      "evidence": [
+        {
+          "file": "verification_report.md",
+          "quote": "Generalization beyond the toy examples is unestablished."
+        }
+      ]
+    }
+  ]
+}

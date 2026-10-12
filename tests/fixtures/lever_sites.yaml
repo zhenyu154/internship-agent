@@ -1,0 +1,19 @@
+# Synthetic test fixture only. All identities and timestamps are fictional.
+# Active records model mocked inputs; never use these entries for live discovery.
+version: 1
+sites:
+  - company_name: Example Lever Alpha
+    site_token: example-lever-alpha
+    source_url: https://jobs.lever.co/example-lever-alpha
+    verified_at: "2025-01-01T00:00:00Z"
+    active: true
+  - company_name: Example Lever Beta
+    site_token: example-lever-beta
+    source_url: https://jobs.lever.co/example-lever-beta
+    verified_at: "2025-01-01T00:00:00Z"
+    active: true
+  - company_name: Example Lever Gamma
+    site_token: example-lever-gamma
+    source_url: https://jobs.lever.co/example-lever-gamma
+    verified_at: "2025-01-01T00:00:00Z"
+    active: true

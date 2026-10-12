@@ -1,0 +1,25 @@
+[build-system]
+# The existing tested 84.0.0 backend supports SPDX license/license-files metadata.
+requires = ["setuptools>=84"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "internship-agent-2027"
+version = "0.1.0"
+description = "Local internship job storage, deduplication, and CSV exports."
+readme = "README.md"
+requires-python = ">=3.12"
+license = "MIT"
+license-files = ["LICENSE"]
+dependencies = ["PyYAML==6.0.3", "pypdf>=5,<7", "streamlit==1.65.0"]
+
+[project.scripts]
+internship-agent = "internship_agent.cli:main"
+
+[tool.setuptools]
+# The offline demo is deliberately a source-checkout workflow. Runtime fixtures,
+# launchers and reviewed config are included in the source archive, not the wheel.
+include-package-data = false
+
+[tool.setuptools.packages.find]
+where = ["src"]

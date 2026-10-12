@@ -1,0 +1,15 @@
+{
+  "version": 1,
+  "notice": "SYNTHETIC DEMONSTRATION DATA — NOT REAL JOB POSTINGS.",
+  "files": {
+    "config/search_preferences.example.yaml": "1e9acf3c690a180a0b8f67f638fc0aaacac8057c2f6e13196096f164fd5e1249",
+    "demo/fixtures/jobs.json": "e58fcb7e67cea691b8cec7431ac1e9d7cecf8241e043b930afc8c0c7d0225514",
+    "demo/fixtures/evidence/profile.md": "8e1a7677f983cffa8ad9b940f6f93bffd7bf1857ae1859c690ddbebb9a94c5a2",
+    "demo/fixtures/evidence/experience_bank.md": "59d0bbb821b04db88ac4fdfc5fbeb976c5fb5889d7899629ba6f3b0901f0f14e",
+    "demo/fixtures/evidence/verification_report.md": "63bec1621010add12c0b24bd859a148330c96ff568270eac43b7d7e29ebf0277",
+    "demo/fixtures/evidence/ranking_features.json": "0a863fb7d68e439fc142ad62a52133cc45074b48e145e55ab8403b8662b01477",
+    "demo/fixtures/resume_review/general_resume.txt": "de783098b3d56da358693893fdd99c25f255277a292331622db6cc269313fdb2",
+    "demo/fixtures/resume_review/observations.md": "93bede14a8a6fd6b1d8f5ea633736472980e0aab86879e29cca9dd15074e707d",
+    "demo/fixtures/resume_review/claims.json": "3b324ec5d628097091cb345feb3ec5fc9a0063b5a78c2e2c4610fc1b1d387d48"
+  }
+}

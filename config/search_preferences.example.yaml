@@ -1,0 +1,97 @@
+# Illustrative preferences, not verified candidate facts. Review values locally.
+# Graduation and employer preferences are example values; authorization stays UNKNOWN.
+version: 1
+
+target:
+  internship_term: "Summer 2027"
+  expected_graduation: "2028-12"
+  degree: "Master's"
+  country: "United States"
+
+locations:
+  preference_order:
+    - California
+    - Washington
+    - New York
+    - Other US
+  include_remote: true
+  include_hybrid: true
+  relocation_willingness: "UNKNOWN"
+
+roles:
+  primary:
+    - Robot Learning Intern
+    - Robotics Machine Learning Intern
+    - Embodied AI Intern
+    - Physical AI Intern
+    - Simulation ML Intern
+    - Autonomy Intern
+    - Robotics Software Intern
+  secondary:
+    - Machine Learning Engineer Intern
+    - Applied Machine Learning Intern
+    - Computer Vision Intern
+    - Multimodal ML Intern
+    - Research Engineer Intern
+    - AI Engineer Intern
+  match_job_description_content: true
+  allow_related_job_titles: true
+
+employers:
+  company_sizes:
+    - Large
+    - Mid-size
+    - Startup
+  prioritize_documented_china_based_operations: false
+  infer_sponsorship_from_company_background: false
+  infer_employee_ethnicity: false
+
+eligibility:
+  phd_only: "EXCLUDE"
+  explicitly_ineligible_degree: "EXCLUDE"
+  explicitly_incompatible_graduation: "EXCLUDE"
+  explicitly_wrong_internship_term: "EXCLUDE"
+  unspecified_degree_requirements: "NEEDS_REVIEW"
+  unspecified_graduation_window: "NEEDS_REVIEW"
+  unspecified_work_authorization: "NEEDS_REVIEW"
+  explicit_no_sponsorship: "NEEDS_REVIEW"
+  candidate_work_authorization: "UNKNOWN"
+
+ranking:
+  weights:
+    role_alignment: 30
+    technical_skills_match: 30
+    research_project_relevance: 25
+    location_preference: 15
+  check_eligibility_before_scoring: true
+  require_explanation: true
+  treat_scores_as_heuristics: true
+
+discovery:
+  max_candidates_per_run: 40
+  prefer_official_career_pages: true
+  source_categories:
+    - Company career websites
+    - Greenhouse
+    - Lever
+    - Ashby
+  allow_aggregators_for_discovery: true
+  verify_with_official_source: true
+  deduplicate: true
+  preserve_existing_records: true
+
+execution:
+  mode: "manual"
+  trigger: "explicit_user_request"
+  scheduler_enabled: false
+  auto_start: false
+  persist_progress: true
+  incremental_discovery: true
+  resume_incomplete_runs: true
+  reverify_existing_jobs_after_days: 7
+  save_verified_results_incrementally: true
+
+applications:
+  auto_submit: false
+  human_review_required: true
+  human_performs_final_submission: true
